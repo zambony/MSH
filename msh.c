@@ -20,9 +20,6 @@
  * 	• Redirects!
  */
 
-// Comment out to make the program prettier
-#define SUBMISSION
-
 #define COLOR_RESET         "\033[0m"
 #define COLOR_C             "\033[1;38;5;129m"
 
