@@ -391,9 +391,8 @@ char **explodeByTag(const char *string,
  * Run a named command.
  *
  * @param cmd Case-sensitive command name
- * @param length The length of the command string
  */
-void runCmd(char *cmd, ssize_t length)
+void runCmd(char *cmd)
 {
 	if (!strcmp("exit", cmd))  // i typed exit, QUIT!!!
 	{
@@ -520,7 +519,7 @@ void runfile(FILE *fp)
 				int i;
 				for (i = 0; i < numCommands; i++)
 				{
-					runCmd(commandQueue[i], pos);
+					runCmd(commandQueue[i]);
 					free(commandQueue[i]);
 				}
 			}
@@ -612,7 +611,7 @@ void processInput()
 			int i;
 			for (i = 0; i < numCommands; i++)
 			{
-				runCmd(commandQueue[i], length);
+				runCmd(commandQueue[i]);
 				free(commandQueue[i]);
 			}
 		}
